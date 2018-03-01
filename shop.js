@@ -5,11 +5,12 @@ function add() {
 	let quantity = document.querySelector('#quan').value;
 	let store = document.querySelector('#store').value;
 	let section = document.querySelector('#section').value;
-	let priority = document.querySelector('#prior').value;
+	let priority = document.querySelector('#prior');
 	let price = document.querySelector('#price').value;
 	let mytable = document.querySelector('#list');
 	let lst = [name, quantity, store, section, price]
 	let row = document.createElement("tr");
+	row.setAttribute("class", String(priority.value));
 	let box = document.createElement("input");
 	box.setAttribute("type", "checkbox");
 	row.appendChild(box);
