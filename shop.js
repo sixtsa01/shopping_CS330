@@ -1,6 +1,6 @@
 "use strict;"
 
-function add() {
+function clickedon() {
 	let name = document.querySelector('#name').value;
 	let quantity = document.querySelector('#quan').value;
 	let store = document.querySelector('#store').value;
