@@ -21,3 +21,20 @@ function add() {
 	}
 	mytable.appendChild(row);
 }
+
+class Item {
+	constructor(name, store, section, prce, quantity, priority) {
+		this.name = name;
+		this.store = store;
+		this.section = section;
+		this.price = price;
+		this.quantity = quantity;
+		this.priority = priority;
+	}
+}
+
+class ShoppingList {
+	constructor() {
+		this.shopList = [];
+	}
+} 
