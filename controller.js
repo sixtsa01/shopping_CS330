@@ -1,21 +1,22 @@
-var shoppingModel = new ShoppingList()
+var shoppingList = new ShoppingList();
+shoppingList.subscribe(redrawTable);
 
 function clickedon() {
 
-    let nameVal = document.querySelector("#name").value;
+    let name_value = document.querySelector("#name").value;
 
-    let storeVal = document.querySelector("#store").value;
+    let store_value = document.querySelector("#store").value;
 
-    let sectionVal = document.querySelector("#section").value;
+    let section_value = document.querySelector("#section").value;
 
-    let priceVal = document.querySelector("#price").value;
+    let price_value = document.querySelector("#price").value;
 
-    let qtyVal = document.querySelector("#quantity").value;
+    let qty_value = document.querySelector("#quantity").value;
 
-    let priorityVal = document.querySelector("#priority").value;
+    let priority_value = document.querySelector("#priority").value;
 
-    let newItem = new Item(nameVal, storeVal, sectionVal, priceVal, qtyVal, priorityVal);
+    let newItem = new Item(name_value, store_value, section_value, price_value, qty_value, priority_value);
 
-    shoppingModel.addItem(newItem);
+    shoppingList.addItem(newitem);
 
 }
