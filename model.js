@@ -70,84 +70,38 @@ class Item {
 
         this.priority = priority;
 
-	this.purchased = false;
+	this._purchased = false;
 
     }
 
+    get purchased() {
+	return this._purchased;
+	}
 
-
-    getName() {
-
-        return String(this.name)
-
-    }
-
-
-
-    getStore() {
-
-        return String(this.store)
-
-    }
-
-
-
-    getSection() {
-
-        return String(this.section)
-
-    }
-
-
-
-    getPrice() {
-
-        return String(this.price)
-
-    }
-
-
-
-    getQuantity() {
-
-        return String(this.quantity)
-
-    }
-
-
-
-    getPriority() {
-
-        return String(this.priority)
-
-    }
+    set purchased(nv) {
+	this._purchased = nv;
+	alert('${this.name} was purchased')
+	}
 
 }
-
-
 
 class ShoppingList extends Subject{
 
     constructor() {
 	super()
 
-        this.shopList = [];
+        this.newItems = [];
+	this.oldItems = [];
 
     }
 
 
 
-    addItem(item) {
+    addItem(it) {
 
-        this.shopList.push(item);
+        this.newItems.push(it);
 
         this.publish("add item", this);
 
     }
-    deleteItem(item) {
-	this.shopList.splice(this.shopList.indexOf(item), 1)
-	this.publish("delete item", this)
-	}
-
-
 }
