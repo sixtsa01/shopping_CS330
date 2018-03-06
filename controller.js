@@ -17,6 +17,6 @@ function clickedon() {
 
     let newItem = new Item(nameVal, storeVal, sectionVal, priceVal, qtyVal, priorityVal);
 
-    shoppingList.addItem(newItem);
+    shoppingModel.addItem(newItem);
 
 }
