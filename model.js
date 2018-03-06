@@ -11,13 +11,11 @@ class Subject {
     }
 
 
-
     subscribe(fn) {
 
         this.handlers.push(fn);
 
     }
-
 
 
     unsubscribe(fn) {
@@ -71,6 +69,8 @@ class Item {
         this.quantity = quantity;
 
         this.priority = priority;
+
+	this.purchased = false;
 
     }
 
@@ -129,6 +129,7 @@ class Item {
 class ShoppingList extends Subject{
 
     constructor() {
+	super()
 
         this.shopList = [];
 
@@ -140,8 +141,13 @@ class ShoppingList extends Subject{
 
         this.shopList.push(item);
 
-        publish("add item", this.shopList);
+        this.publish("add item", this);
 
     }
+    deleteItem(item) {
+	this.shopList.splice(this.shopList.indexOf(item), 1)
+	this.publish("delete item", this)
+	}
+
 
 }
