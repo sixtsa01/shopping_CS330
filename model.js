@@ -73,6 +73,51 @@ class Item {
 	this._purchased = false;
 
     }
+    getName() {
+
+        return String(this.name)
+
+    }
+
+
+
+    getStore() {
+
+        return String(this.store)
+
+    }
+
+
+
+    getSection() {
+
+        return String(this.section)
+
+    }
+
+
+
+    getPrice() {
+
+        return String(this.price)
+
+    }
+
+
+
+    getQuantity() {
+
+        return String(this.quantity)
+
+    }
+
+
+
+    getPriority() {
+
+        return String(this.priority)
+
+    }
 
     get purchased() {
 	return this._purchased;
