@@ -1,14 +1,11 @@
-var viewThing = new Subject()
-
-viewThing.subscribe()
-
-
+var ViewThing = new Subject()
+ViewThing.subscribe()
 
 function redrawTable(shoppingList) {
 
-    let tab = document.querySelector("#itemtab");
+    	let tab = document.querySelector("#itemtab");
 
-    for (item of shoppingList.shopList) {
+    	for (item of shoppingList.shopList) {
 
         let row = tab.appendChild(document.createElement("tr"));
 
