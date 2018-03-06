@@ -1,7 +1,5 @@
 var ViewThing = require('./view')
 
-
-
 class Subject {
 
 
