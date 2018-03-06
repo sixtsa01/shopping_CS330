@@ -1,13 +1,25 @@
-var ViewThing = new Subject()
-ViewThing.subscribe()
+function redrawTable(shoppingList, msg) {
+	let tab = document.querySelector("#itemList");
 
-function redrawTable(shoppingList) {
+    tab.innerHTML = "";
 
-    	let tab = document.querySelector("#itemtab");
-
-    	for (item of shoppingList.shopList) {
+    for (item of shoppingList.shopList) {
 
         let row = tab.appendChild(document.createElement("tr"));
+
+        if (item.priority == "High") {
+
+            row.setAttribute('color', 'red')
+
+        } else if (item.priority == "Medium") {
+
+            row.setAttribute('color', 'yellow')
+
+        } else {
+
+            row.setAttribute('color', 'green')
+
+        }
 
         let check = row.appendChild(document.createElement("td"));
 
@@ -17,24 +29,23 @@ function redrawTable(shoppingList) {
 
         let namedata = row.appendChild(document.createElement("td"));
 
-        namedata.innerHTML = item.getName();
+        namedata.innerHTML = item.name;
 
         let qtydata = row.appendChild(document.createElement("td"));
 
-        qtydata.innerHTML = item.getQuantity();
+        qtydata.innerHTML = item.quantity;
 
         let storedata = row.appendChild(document.createElement("td"));
 
-        storedata.innerHTML = item.getStore();
+        storedata.innerHTML = item.store;
 
         let sectiondata = row.appendChild(document.createElement("td"));
 
-        sectiondata.innerHTML = item.getSection();
+        sectiondata.innerHTML = item.section;
 
         let pricedata = row.appendChild(document.createElement("td"));
 
-        pricedata.innerHTML = item.getPrice();
+        pricedata.innerHTML = item.price;
 
     }
-
 }
