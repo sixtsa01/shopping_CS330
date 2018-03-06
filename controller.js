@@ -1,4 +1,5 @@
-var shoppingList = new ShoppingList();
+var shoppingModel = new ShoppingList()
+var myView = new ShoppingView(shoppingModel)
 
 function clickedon() {
 
