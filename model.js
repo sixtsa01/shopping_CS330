@@ -1,5 +1,3 @@
-var ViewThing = require('./view')
-
 class Subject {
 
 
@@ -73,51 +71,6 @@ class Item {
 	this._purchased = false;
 
     }
-    getName() {
-
-        return String(this.name)
-
-    }
-
-
-
-    getStore() {
-
-        return String(this.store)
-
-    }
-
-
-
-    getSection() {
-
-        return String(this.section)
-
-    }
-
-
-
-    getPrice() {
-
-        return String(this.price)
-
-    }
-
-
-
-    getQuantity() {
-
-        return String(this.quantity)
-
-    }
-
-
-
-    getPriority() {
-
-        return String(this.priority)
-
-    }
 
     get purchased() {
 	return this._purchased;
@@ -125,7 +78,7 @@ class Item {
 
     set purchased(nv) {
 	this._purchased = nv;
-	alert('${this.name} was purchased')
+	alert({})
 	}
 
 }
@@ -134,19 +87,17 @@ class ShoppingList extends Subject{
 
     constructor() {
 	super()
-
-        this.newItems = [];
-	this.oldItems = [];
+	this.shopList = [];
 
     }
 
 
 
-    addItem(it) {
+    addItem(item) {
 
-        this.newItems.push(it);
+        this.shopList.push(item);
 
-        this.publish("add item", this);
+        this.publish("newitem", this);
 
     }
 }
