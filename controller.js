@@ -1,5 +1,5 @@
 var shoppingList = new ShoppingList();
-shoppingList.subscribe(redrawTable);
+var thing = new ShoppingView(shoppingList)
 
 function clickedon() {
 
@@ -17,6 +17,6 @@ function clickedon() {
 
     let newItem = new Item(name_value, store_value, section_value, price_value, qty_value, priority_value);
 
-    shoppingList.addItem(newitem);
+    shoppingList.addItem(newItem);
 
 }
