@@ -1,31 +1,25 @@
-function redrawTable(shoppingList, msg) {
-	let tab = document.querySelector("#itemList");
+class ShoppingView {
+	constructor(model) {
+		model.subscribe(this.redrawTable.bind(this))
+	}
 
-    tab.innerHTML = "";
 
-    for (item of shoppingList.shopList) {
+	function redrawTable(shoppingList, msg) {
+		let tab = document.querySelector("#itemList");
 
-        let row = tab.appendChild(document.createElement("tr"));
+    		tab.innerHTML = "";
 
-        if (item.priority == "High") {
+    		for (item of shoppingList.shopList) {
 
-            row.setAttribute('color', 'red')
+        		let row = tab.appendChild(document.createElement("tr"));			row.classList.add(item.priority)
+			let box = document.createElement("input")
+			box.type = "checkbox"
+			row.appendChild(box)
+			box.onclick = function() {
+				item.purchased = true;
+				box.parentElement.classList.add("strikeout")
 
-        } else if (item.priority == "Medium") {
-
-            row.setAttribute('color', 'yellow')
-
-        } else {
-
-            row.setAttribute('color', 'green')
-
-        }
-
-        let check = row.appendChild(document.createElement("td"));
-
-        let box = check.appendChild(document.createElement("input"));
-
-        box.setAttribute("type", "checkbox");
+       			 }
 
         let namedata = row.appendChild(document.createElement("td"));
 
@@ -47,5 +41,8 @@ function redrawTable(shoppingList, msg) {
 
         pricedata.innerHTML = item.price;
 
-    }
+    		}
+
+	}
+
 }
