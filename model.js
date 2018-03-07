@@ -78,7 +78,7 @@ class Item {
 
     set purchased(nv) {
 	this._purchased = nv;
-	alert({})
+	alert(`${this.name} was purchased`)
 	}
 
 }
