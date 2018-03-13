@@ -10,7 +10,7 @@ function clickedon() {
     let qty_Val = document.querySelector("#quantity").value;
     let priority_Val = document.querySelector("#priority").value;
     let newItem = new Item(name_Val, store_Val, section_Val, price_Val, qty_Val, priority_Val);
-    shoppingList.addItem(newItem);
+    shoppingModel.addItem(newItem);
 }
 
 function reloadTable(itemList) {
@@ -22,7 +22,7 @@ function reloadTable(itemList) {
         let quantity_Val = itemDict["quantity"]
         let priority_Val = itemDict["priority"]
         let newItem = new Item(name_Val, store_Val, section_Val, price_Val, quantity_Val, priority_Val)
-        shoppingList.addItem(newItem)
+        shoppingModel.addItem(newItem)
     }
 }
 
