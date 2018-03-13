@@ -5,10 +5,10 @@ class ShoppingView {
 
 
 	redrawTable(shoppingList, msg) {
-		let draw = document.getElementById("#item_List");
+		let draw = document.querySelector("#item_List");
    		draw.innerHTML = "";
     		for (let item of shoppingList.shopList) {
-			let row = draw.appendChild(document.createElement("tr")
+			let row = draw.appendChild(document.createElement("tr"))
 			row.classList.add(item.priority);
 			let box = document.createElement("input")
 			box.type = "checkbox"
@@ -16,10 +16,10 @@ class ShoppingView {
 			box.onclick = function() {
 				if (item.purchased === false) {
 					item.purchased = true;
-					cb.parentElement.classList.add("strikeout")
+					box.parentElement.classList.add("strikeout")
                		 }	else {
                     			item.purchased = false;
-                    			cb.parentElement.classList.remove("strikeout")
+                    			box.parentElement.classList.remove("strikeout")
                			 }
 
        			 }
