@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <title>Shopping List</title>
+
+	<link rel="stylesheet" href="shop.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    </head>
+
+    <body bgcolor="#E6E6FA">
+
+        <h1>Shopping List</h1>
+
+        <hr/>
+
+
+
+        <div class="container">
+
+            <div class="form-group">
+
+                Item Name: <input id=name type=text name="nameinput"/>
+
+                Quantity:
+
+                <select id="quantity">
+
+                    <option value=""></option>
+
+                    <option value=1>1</option>
+
+                    <option value=2>2</option>
+
+                    <option value=3>3</option>
+
+                    <option value=4>4</option>
+
+                    <option value=5>5</option>
+
+                    <option value=6>6</option>
+
+                    <option value=7>7</option>
+
+                    <option value=8>8</option>
+
+                    <option value=9>9</option>
+
+                    <option value=10>10</option>
+
+                </select>
+
+                Priority: 
+
+                <select id="priority">
+
+                    <option value=""></option>
+
+                    <option value="high">High</option>
+
+                    <option value="medium">Medium</option>
+
+                    <option value="low">Low</option>
+
+                </select>
+
+                <br><br>
+
+                Store:
+
+                <select id="store">
+
+                    <option value=""></option>
+
+                    <option value="Hy-Vee">Hy-Vee</option>
+
+                    <option value="Fareway">Fareway</option>
+
+		    <option value="Walmart">Walmart</option>
+
+		    <option value="Costco">Costco</option>
+
+		    <option value="Sam's Club">Sam's Club</option>
+
+		    <option value="Walgreens">Walgreens</option>
+
+		    <option value="Lowes">Lowes</option>
+
+		    <option value="Target">Target</option>
+
+		    <option value="Staples">Staples</option>
+
+		    <option value="Mernards">Mernards</option>
+
+                    <option value="Other">Other</option>
+
+                </select>
+
+                Section:
+
+                <select id="section">
+
+                    <option value=""></option>
+
+                    <option value="Produce">Produce</option>
+
+                    <option value="Deli">Deli</option>
+
+                    <option value="Bakery">Bakery</option>
+
+		    <option value="Canned Goods">Canned Goods</option>
+
+		    <option value="Hardware">Hardware</option>
+
+		    <option value="Kitchen Supplies">Kitchen Supplies</option>
+
+                    <option value="Other">Other</option>
+
+		    <option value="Dairy">Dairy</option>
+                </select>
+
+                Price:
+
+                <input id=price type=text name="priceinput"/>
+
+                <br><br>
+
+                <button id=addbutt onclick="clickedon()" type="button" class="btn btn-warning">Add</button>
+
+                
+
+            </div>
+
+            <table class="table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Items</th>
+
+                    </tr>
+
+                    <tr>
+
+                        <td></td>
+
+                        <td onclick="nameSort()">Item Name</td>
+
+                        <td onclick="quantitySort()">Quantity</td>
+
+                        <td onclick="storeSort()">Store</td>
+
+                        <td onclick="sectionSort()">Section</td>
+
+                        <td onclick="priceSort()">Price</td>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id=item_List></tbody>
+
+            </table>
+
+        </div>
+
+        <script src="model.js" type=text/javascript></script>
+
+        <script src="view.js" type=text/javascript></script>
+
+        <script src="controller.js" type=text/javascript></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    </body>
+
+</html>
